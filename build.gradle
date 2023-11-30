@@ -1,0 +1,32 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.21'
+    id 'io.ktor.plugin' version '2.3.6'
+}
+
+group "com.ktorapiproject"
+version "0.0.1"
+mainClassName = "com.ktorapiproject.ApplicationKt"
+
+def isDevelopment = project.ext.has("development")
+applicationDefaultJvmArgs = ["-Dio.ktor.development=$isDevelopment"]
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "io.ktor:ktor-server-core-jvm"
+    implementation "io.ktor:ktor-server-content-negotiation-jvm"
+    implementation "io.ktor:ktor-serialization-gson-jvm"
+    implementation "io.ktor:ktor-serialization-kotlinx-json-jvm"
+    implementation "io.ktor:ktor-server-call-logging-jvm"
+    implementation "io.ktor:ktor-server-netty-jvm"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    testImplementation "io.ktor:ktor-server-tests-jvm"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+
+//    implementation("io.ktor:ktor-server-netty:<ktor_version>") // latest: 2.2.3
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21"
+    implementation "org.litote.kmongo:kmongo-coroutine:4.11.0"
+}

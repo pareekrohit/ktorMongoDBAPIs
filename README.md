@@ -2,9 +2,9 @@
 This project in kotlin with using ktor to create api's and for backend mongo db is used.
 
 #Project Setup
--IntelliJ Idea
--Mongo DB Compass
--Postman
+#IntelliJ Idea
+#Mongo DB Compass
+#Postman
 
 **MongoDB Commands before connecting to server in compass**
 
